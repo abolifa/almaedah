@@ -8,25 +8,11 @@ const mediaSequence = [
   { type: "video", src: "/videos/hero-2.mp4", duration: 10 },
 ];
 
-const preloadVideos = (videos: string[]) => {
-  videos.forEach((src) => {
-    const video = document.createElement("video");
-    video.src = src;
-    video.preload = "auto";
-    video.load();
-  });
-};
-
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const [scrolled, setScrolled] = useState(false);
 
-  // PRELOAD ALL VIDEOS ONCE
-  useEffect(() => {
-    preloadVideos(mediaSequence.map((m) => m.src));
-  }, []);
-
-  // SLIDE TIMER
+  // Rotate slides
   useEffect(() => {
     const timer = setTimeout(
       () => setIndex((p) => (p + 1) % mediaSequence.length),
@@ -35,11 +21,11 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, [index]);
 
-  // SCROLL DETECTOR
+  // Scroll detector
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const f = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", f);
+    return () => window.removeEventListener("scroll", f);
   }, []);
 
   const current = mediaSequence[index];
@@ -47,24 +33,26 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black"
     >
+      {/* Background video with POSTER (instant paint) */}
       <AnimatePresence mode="wait">
-        {current.type === "video" ? (
+        {current.type === "video" && (
           <motion.video
             key={current.src}
             src={current.src}
             autoPlay
             muted
             playsInline
-            preload="auto"
+            preload="none"
+            poster="/images/hero-poster.jpg" // ADD a good poster!!!
             className="absolute inset-0 w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 1.3, ease: "easeInOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
           />
-        ) : null}
+        )}
       </AnimatePresence>
 
       {/* Overlays */}
@@ -81,36 +69,36 @@ const Hero = () => {
       <div className="relative z-10 w-full text-center px-6">
         <motion.img
           src="/meta/logo-icon.png"
-          className="mx-auto w-44 md:w-48 h-auto mb-2"
-          initial={{ opacity: 0, y: 40 }}
+          className="mx-auto w-44 md:w-48 h-auto mb-3"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
+          transition={{ duration: 0.6 }}
         />
 
         <motion.h1
-          className="text-2xl md:text-4xl font-black text-white"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-2xl md:text-4xl font-extrabold text-white"
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <span>شركة المائدة</span>
+          شركة المائدة
         </motion.h1>
 
         <motion.p
           className="mt-3 text-lg md:text-xl text-white/90"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <span>لاستيراد المواد الغذائية</span>
+          لاستيراد المواد الغذائية
         </motion.p>
 
         <motion.a
           href="#about"
           className="inline-block mt-6 px-10 py-3 rounded-full font-semibold text-white bg-[#ec7212]"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="flex items-center gap-1">
             <span>إكتشف المزيد</span>
@@ -123,16 +111,16 @@ const Hero = () => {
       <AnimatePresence>
         {!scrolled && (
           <motion.div
-            key="mouse"
+            key="scroll"
             className="absolute bottom-10 w-full flex justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <motion.div
               className="relative w-7 h-12 rounded-full border-2 border-white/70 flex justify-center items-start"
-              animate={{ opacity: [0.6, 1, 0.6] }}
+              animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ repeat: Infinity, duration: 2 }}
             >
               <motion.div
