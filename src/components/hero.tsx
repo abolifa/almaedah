@@ -68,7 +68,7 @@ const Hero = () => {
       {/* CONTENT */}
       <div className="relative z-10 w-full text-center px-6">
         <motion.img
-          src="/meta/logo-icon.png"
+          src="/meta/logo-icon.webp"
           className="mx-auto w-44 md:w-48 h-auto mb-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

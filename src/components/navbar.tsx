@@ -52,7 +52,7 @@ const Navbar = () => {
       <header className="container mx-auto px-5 xl:px-0 flex items-center justify-between transition-colors duration-300">
         <Link to="/" className="w-18 h-auto flex items-center justify-center">
           <img
-            src={"/meta/logo-icon.png"}
+            src={"/meta/logo-icon.webp"}
             className="w-full h-full object-contain transition-all duration-300"
             alt="Logo"
           />
