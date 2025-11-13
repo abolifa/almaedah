@@ -1,0 +1,151 @@
+"use client";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const mediaSequence = [
+  { type: "video", src: "/videos/hero-3.mp4", duration: 4 },
+  { type: "video", src: "/videos/hero-2.mp4", duration: 10 },
+];
+
+const preloadVideos = (videos: string[]) => {
+  videos.forEach((src) => {
+    const video = document.createElement("video");
+    video.src = src;
+    video.preload = "auto";
+    video.load();
+  });
+};
+
+const Hero = () => {
+  const [index, setIndex] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+
+  // PRELOAD ALL VIDEOS ONCE
+  useEffect(() => {
+    preloadVideos(mediaSequence.map((m) => m.src));
+  }, []);
+
+  // SLIDE TIMER
+  useEffect(() => {
+    const timer = setTimeout(
+      () => setIndex((p) => (p + 1) % mediaSequence.length),
+      mediaSequence[index].duration * 1000
+    );
+    return () => clearTimeout(timer);
+  }, [index]);
+
+  // SCROLL DETECTOR
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const current = mediaSequence[index];
+
+  return (
+    <section
+      id="hero"
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+    >
+      <AnimatePresence mode="wait">
+        {current.type === "video" ? (
+          <motion.video
+            key={current.src}
+            src={current.src}
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 1.3, ease: "easeInOut" }}
+          />
+        ) : null}
+      </AnimatePresence>
+
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-black/70" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* CONTENT */}
+      <div className="relative z-10 w-full text-center px-6">
+        <motion.img
+          src="/meta/logo-icon.png"
+          className="mx-auto w-44 md:w-48 h-auto mb-2"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        />
+
+        <motion.h1
+          className="text-2xl md:text-4xl font-black text-white"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+        >
+          <span>شركة المائدة</span>
+        </motion.h1>
+
+        <motion.p
+          className="mt-3 text-lg md:text-xl text-white/90"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1 }}
+        >
+          <span>لاستيراد المواد الغذائية</span>
+        </motion.p>
+
+        <motion.a
+          href="#about"
+          className="inline-block mt-6 px-10 py-3 rounded-full font-semibold text-white bg-[#ec7212]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 1 }}
+        >
+          <div className="flex items-center gap-1">
+            <span>إكتشف المزيد</span>
+            <ChevronDown />
+          </div>
+        </motion.a>
+      </div>
+
+      {/* Scroll Indicator */}
+      <AnimatePresence>
+        {!scrolled && (
+          <motion.div
+            key="mouse"
+            className="absolute bottom-10 w-full flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 1 }}
+          >
+            <motion.div
+              className="relative w-7 h-12 rounded-full border-2 border-white/70 flex justify-center items-start"
+              animate={{ opacity: [0.6, 1, 0.6] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+            >
+              <motion.div
+                className="absolute top-2 w-1.5 h-1.5 bg-white rounded-full"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+};
+
+export default Hero;
