@@ -89,7 +89,7 @@ const Footer = () => {
               dir="ltr"
               className="text-[#5c4a35] hover:text-[#d8a547] transition underline"
             >
-              +218 912 090 026
+              +218 91 209 0026
             </a>
           </div>
 
@@ -100,7 +100,7 @@ const Footer = () => {
               dir="ltr"
               className="text-[#5c4a35] hover:text-[#d8a547] transition underline"
             >
-              +218 926 136 522
+              +218 92 613 6522
             </a>
           </div>
 

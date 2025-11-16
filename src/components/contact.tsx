@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative w-full py-24 bg-[#ffffff]">
+    <section id="contact" className="relative w-full py-24 bg-[#ffffff]">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-stretch">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -70,7 +70,7 @@ const Contact = () => {
                 className="text-[#5c4a35] font-medium underline"
                 href="tel:+218912090026"
               >
-                +218 912 090 026
+                +218 91 209 0026
               </a>
             </div>
             <div className="flex items-center gap-3">
@@ -80,7 +80,7 @@ const Contact = () => {
                 className="text-[#5c4a35] font-medium underline"
                 href="tel:+218926136522"
               >
-                +218 926 136 522
+                +218 92 613 6522
               </a>
             </div>
             <div className="flex items-center gap-3">

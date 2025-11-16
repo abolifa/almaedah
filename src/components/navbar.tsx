@@ -12,7 +12,7 @@ const Navbar = () => {
   const navs = [
     { title: "الرئيسية", path: "#hero" },
     { title: "من نحن", path: "#about" },
-    { title: "خدماتنا", path: "#services" },
+    { title: "منتجاتنا", path: "#products" },
     { title: "تواصل معنا", path: "#contact" },
   ];
 

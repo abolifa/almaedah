@@ -35,8 +35,9 @@ const Hero = () => {
       id="hero"
       className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black"
     >
+      {/* Background video with POSTER (instant paint) */}
       <AnimatePresence mode="wait">
-        {current.type === "video" && (
+        {current.type === "video" ? (
           <motion.video
             key={current.src}
             src={current.src}
@@ -44,8 +45,19 @@ const Hero = () => {
             muted
             playsInline
             preload="none"
-            poster="/images/logo-poster.webp"
+            poster="/images/hero-poster.jpg" // ADD a good poster!!!
             className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          />
+        ) : (
+          <motion.img
+            key={current.src}
+            src={current.src}
+            alt="Hero Background"
+            className="absolute inset-0 w-full h-full object-contain"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
