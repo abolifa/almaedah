@@ -47,7 +47,7 @@ const WhyUs = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative w-full py-28 bg-[#fffdf5]">
+    <section id="whyus" className="relative w-full py-28 bg-[#fffdf5]">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <motion.h2
           className="text-4xl font-black text-[#6a4a2d] mb-4"
