@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -8,30 +9,29 @@ const fadeUp = {
 
 const products = [
   {
-    title: "فلفل أحمر مجروش",
-    description: "نكهة قوية وطعم أصيل يضيف الحرارة المطلوبة لأطباقكم المفضلة.",
+    title: "products.item1.title",
+    description: "products.item1.description",
     image: "/products/p-1.png",
     inverted: false,
     color: "#b91c1c",
   },
   {
-    title: "مكسرات",
-    description:
-      "مجموعة مختارة من المكسرات الطازجة والصحية لتناولها كوجبة خفيفة.",
+    title: "products.item2.title",
+    description: "products.item2.description",
     image: "/products/p-2.png",
     inverted: true,
     color: "#d97706",
   },
   {
-    title: "بهارات مشكلة",
-    description: "خلطة متوازنة من البهارات تعطي الأطباق مذاقًا استثنائيًا.",
+    title: "products.item3.title",
+    description: "products.item3.description",
     image: "/products/p-3.png",
     inverted: false,
     color: "#6b21a8",
   },
   {
-    title: "سمن بقري",
-    description: "سمن طبيعي 100% يعزز نكهة الأطعمة ويضيف لها غنى خاص.",
+    title: "products.item4.title",
+    description: "products.item4.description",
     image: "/products/p-4.png",
     inverted: true,
     color: "#ca8a04",
@@ -39,6 +39,8 @@ const products = [
 ];
 
 export default function ProductsSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="products" className="w-full bg-white overflow-hidden">
       <div className="w-full h-[60vh] md:h-[70vh] flex flex-col items-center justify-center text-center px-6">
@@ -50,7 +52,7 @@ export default function ProductsSection() {
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6"
         >
-          منتجاتنا
+          {t("products.title")}
         </motion.h2>
 
         <motion.p
@@ -61,7 +63,7 @@ export default function ProductsSection() {
           transition={{ duration: 0.9 }}
           className="text-lg md:text-xl text-gray-600 max-w-2xl"
         >
-          تشكيلة واسعة من أجود أنواع التوابل والمنتجات الغذائية المختارة بعناية.
+          {t("products.subtitle")}
         </motion.p>
       </div>
 
@@ -70,7 +72,6 @@ export default function ProductsSection() {
           key={index}
           className="relative grid grid-cols-1 md:grid-cols-2 h-[90vh] md:h-screen"
         >
-          {/* BACKGROUND FLOATING SHAPES */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.25 }}
@@ -102,7 +103,6 @@ export default function ProductsSection() {
             ></div>
           </motion.div>
 
-          {/* IMAGE SIDE */}
           <motion.div
             initial={{ opacity: 0, x: p.inverted ? 40 : -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -127,7 +127,6 @@ export default function ProductsSection() {
             <div className="absolute inset-0 bg-black/10 z-20"></div>
           </motion.div>
 
-          {/* TEXT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: p.inverted ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -143,7 +142,7 @@ export default function ProductsSection() {
               className="text-3xl md:text-4xl font-extrabold mb-4"
               style={{ color: p.color }}
             >
-              {p.title}
+              {t(p.title)}
             </motion.h3>
 
             <motion.p
@@ -151,7 +150,7 @@ export default function ProductsSection() {
               transition={{ duration: 3, repeat: Infinity }}
               className="text-gray-700 text-lg leading-relaxed"
             >
-              {p.description}
+              {t(p.description)}
             </motion.p>
 
             <div

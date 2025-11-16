@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const mediaSequence = [
   { type: "video", src: "/videos/hero-3.mp4", duration: 4 },
@@ -11,6 +12,7 @@ const mediaSequence = [
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   // Rotate slides
   useEffect(() => {
@@ -92,7 +94,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          شركة المائدة
+          {t("hero.title")}
         </motion.h1>
 
         <motion.p
@@ -101,7 +103,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          لاستيراد المواد الغذائية
+          {t("hero.subtitle")}
         </motion.p>
 
         <motion.a
@@ -112,7 +114,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="flex items-center gap-1">
-            <span>إكتشف المزيد</span>
+            <span>{t("hero.cta")}</span>
             <ChevronDown />
           </div>
         </motion.a>

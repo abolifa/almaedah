@@ -3,8 +3,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
@@ -30,10 +33,10 @@ const Contact = () => {
         setSent(true);
         e.target.reset();
       } else {
-        setError("حدث خطأ أثناء الإرسال، حاول مرة أخرى.");
+        setError(t("contact.errorSend"));
       }
-    } catch (err) {
-      setError("تعذر الاتصال بالخادم.");
+    } catch {
+      setError(t("contact.errorServer"));
     }
 
     setLoading(false);
@@ -42,17 +45,21 @@ const Contact = () => {
   return (
     <section id="contact" className="relative w-full py-24 bg-[#ffffff]">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-stretch">
+        {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           className="flex flex-col gap-6"
         >
-          <h2 className="text-4xl font-black text-[#6a4a2d]">تواصل معنا</h2>
+          <h2 className="text-4xl font-black text-[#6a4a2d]">
+            {t("contact.title")}
+          </h2>
+
           <p className="text-[#5c4a35] text-lg leading-relaxed">
-            يسعدنا التواصل معكم للطلبات أو الاستفسارات، فريق المائدة جاهز دائمًا
-            لخدمتكم.
+            {t("contact.subtitle")}
           </p>
+
           <div className="bg-white backdrop-blur-sm p-6 rounded-3xl border border-black/5 flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <Mail className="text-[#d8a547]" size={22} />
@@ -63,6 +70,7 @@ const Contact = () => {
                 info@almaedah.com.ly
               </a>
             </div>
+
             <div className="flex items-center gap-3">
               <Phone className="text-[#d8a547]" size={22} />
               <a
@@ -73,6 +81,7 @@ const Contact = () => {
                 +218 91 209 0026
               </a>
             </div>
+
             <div className="flex items-center gap-3">
               <Phone className="text-[#d8a547]" size={22} />
               <a
@@ -83,12 +92,15 @@ const Contact = () => {
                 +218 92 613 6522
               </a>
             </div>
+
             <div className="flex items-center gap-3">
               <MapPin className="text-[#d8a547]" size={22} />
-              <span className="text-[#5c4a35] font-medium">زليتن - ليبيا</span>
+              <span className="text-[#5c4a35] font-medium">
+                {t("contact.location")}
+              </span>
             </div>
           </div>
-          {/* MAP */}
+
           {/* MAP */}
           <div className="rounded-3xl overflow-hidden shadow-lg h-64">
             <iframe
@@ -112,7 +124,7 @@ const Contact = () => {
         >
           <input
             name="name"
-            placeholder="الاسم الكامل"
+            placeholder={t("contact.form.name")}
             required
             className="p-4 rounded-xl border bg-white focus:ring-2 focus:ring-[#d8a547] outline-none"
           />
@@ -120,20 +132,20 @@ const Contact = () => {
           <input
             name="email"
             type="email"
-            placeholder="البريد الإلكتروني"
+            placeholder={t("contact.form.email")}
             required
             className="p-4 rounded-xl border bg-white focus:ring-2 focus:ring-[#d8a547] outline-none"
           />
 
           <input
             name="phone"
-            placeholder="رقم الهاتف"
+            placeholder={t("contact.form.phone")}
             className="p-4 rounded-xl border bg-white focus:ring-2 focus:ring-[#d8a547] outline-none"
           />
 
           <textarea
             name="message"
-            placeholder="رسالتك"
+            placeholder={t("contact.form.message")}
             rows={5}
             required
             className="p-4 rounded-xl border bg-white focus:ring-2 focus:ring-[#d8a547] outline-none"
@@ -143,12 +155,12 @@ const Contact = () => {
             disabled={loading}
             className="px-6 py-4 rounded-xl bg-[#d8a547] text-white font-semibold hover:bg-[#b78c34] transition shadow-lg"
           >
-            {loading ? "جاري الإرسال..." : "إرسال الرسالة"}
+            {loading ? t("contact.form.sending") : t("contact.form.send")}
           </button>
 
           {sent && (
             <p className="text-green-600 font-bold mt-2 text-center">
-              ✔ تم إرسال رسالتك بنجاح
+              {t("contact.success")}
             </p>
           )}
           {error && (

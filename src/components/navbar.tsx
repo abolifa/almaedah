@@ -2,18 +2,22 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { LanguageToggle } from "./lang-switcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const navs = [
-    { title: "الرئيسية", path: "#hero" },
-    { title: "من نحن", path: "#about" },
-    { title: "منتجاتنا", path: "#products" },
-    { title: "تواصل معنا", path: "#contact" },
+    { title: t("navbar.home"), path: "#hero" },
+    { title: t("navbar.about"), path: "#about" },
+    { title: t("navbar.products"), path: "#products" },
+    { title: t("navbar.whyus"), path: "#whyus" },
+    { title: t("navbar.contact"), path: "#contact" },
   ];
 
   useEffect(() => {
@@ -100,6 +104,8 @@ const Navbar = () => {
           >
             <Mail className="w-4 h-4" />
           </a>
+
+          <LanguageToggle scrolled={scrolled} />
 
           <button
             onClick={() => setOpen((v) => !v)}

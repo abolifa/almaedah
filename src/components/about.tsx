@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const linePath =
   "M400 0 C450 300 200 500 400 900 C600 1300 200 1600 450 2000 C700 2400 300 2800 600 3200 C900 3600 200 4000 500 4400 C800 4800 300 5200 550 5600 C800 6000 200 6400 400 6800 C600 7200 300 7600 450 8000";
@@ -9,77 +10,78 @@ const timelineItems = [
   {
     top: 400,
     side: "left",
-    title: "من الحقول تبدأ الحكاية",
-    text: "نختار أفضل أنواع المكسرات والفستق والكاكاوية من حقول عالمية موثوقة لنقدّم لكم بداية نقية لكل منتج.",
+    title: "about.item1.title",
+    text: "about.item1.text",
     image: "/images/nuts.png",
   },
   {
     top: 1150,
     side: "right",
-    title: "ثمار مجففة… بطعم الحياة",
-    text: "قمر الدين والتين المجفف نختارها بعناية لتصل إليكم بطعم أصيل وجودة عالية.",
+    title: "about.item2.title",
+    text: "about.item2.text",
     image: "/images/dried-fruits.png",
   },
   {
     top: 1900,
     side: "left",
-    title: "نكهات عربية أصيلة",
-    text: "من النعناع المجفف إلى الكمون والفلفل والبهارات… نقدم لكم نكهات تضيف للمطبخ لمسة تراثية مميزة.",
+    title: "about.item3.title",
+    text: "about.item3.text",
     image: "/images/spices.webp",
   },
   {
     top: 2650,
     side: "right",
-    title: "البليلة… دفء يجمع العائلة",
-    text: "البليلة الغنية والمختارة بعناية، تُقدَّم لكم بجودة عالية لتكون جزءًا من طقوس السهرات والشتاء.",
+    title: "about.item4.title",
+    text: "about.item4.text",
     image: "/images/bleila.png",
   },
   {
     top: 3400,
     side: "left",
-    title: "بذور دوار الشمس والصحة",
-    text: "نستورد بذور دوار الشمس عالية الجودة لتكون وجبة خفيفة صحية ومغذية لكم ولعائلتكم.",
+    title: "about.item5.title",
+    text: "about.item5.text",
     image: "/images/seeds.png",
   },
   {
     top: 4200,
     side: "right",
-    title: "السمن العربي… نكهة البيت",
-    text: "سمن عربي أصلي نستورده بجودة عالية ليمنحكم نكهة بيتية أصيلة في كل وصفة.",
+    title: "about.item6.title",
+    text: "about.item6.text",
     image: "/images/ghee.png",
   },
   {
     top: 5000,
     side: "left",
-    title: "حلول غذائية للمطاعم والمخابز",
-    text: "نوفر المكسرات، البهارات، السمن، والبذور بكميات كبيرة لتلبية احتياجات المطاعم والمخابز.",
+    title: "about.item7.title",
+    text: "about.item7.text",
     image: "/images/horeca.png",
   },
   {
     top: 5800,
     side: "right",
-    title: "جودة تُفحص بعناية",
-    text: "تمر كل منتجات المائدة بمراحل فحص دقيقة لضمان الطعم والجودة والنظافة قبل وصولها إليكم.",
+    title: "about.item8.title",
+    text: "about.item8.text",
     image: "/images/quality.png",
   },
   {
     top: 6600,
     side: "left",
-    title: "شبكة استيراد عالمية",
-    text: "نتعامل مع كبار الموردين حول العالم لضمان استمرارية التوريد وثبات الجودة.",
+    title: "about.item9.title",
+    text: "about.item9.text",
     image: "/images/sail.png",
   },
   {
     top: 7400,
     side: "right",
-    title: "رؤية شركة المائدة",
-    text: "أن نكون الشريك الأول في ليبيا لاستيراد المواد الغذائية بجودة عالية وموثوقية مستمرة.",
+    title: "about.item10.title",
+    text: "about.item10.text",
     image: "/images/vision.png",
   },
 ];
 
 const About = () => {
   const ref = useRef<HTMLDivElement | null>(null);
+  const { t } = useTranslation();
 
   // 🟢 الحل — استخدام scrollYProgress بدون هدف
   const { scrollYProgress } = useScroll({
@@ -155,10 +157,10 @@ const About = () => {
                 transition={{ duration: 1.0, ease: "easeOut", delay: 0.2 }}
               >
                 <h3 className="text-2xl font-extrabold text-[#6a4a2d] mb-2">
-                  {item.title}
+                  {t(item.title)}
                 </h3>
                 <p className="text-sm md:text-base text-[#5c4a35] leading-relaxed">
-                  {item.text}
+                  {t(item.text)}
                 </p>
               </motion.div>
             </div>

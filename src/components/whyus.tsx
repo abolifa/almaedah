@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   CheckCircle,
   Package,
@@ -12,39 +13,41 @@ import {
 const whyPoints = [
   {
     icon: <Shield className="w-10 h-10 text-[#d8a547]" />,
-    title: "جودة نختبرها بعناية",
-    text: "نطبّق معايير صارمة لفحص المنتجات قبل وصولها إليكم لضمان الطعم، النظافة والقيمة الغذائية.",
+    title: "whyus.item1.title",
+    text: "whyus.item1.text",
   },
   {
     icon: <Star className="w-10 h-10 text-[#d8a547]" />,
-    title: "موردون عالميون موثوقون",
-    text: "نتعامل مع أفضل الموردين من تركيا وسوريا ومصر والأردن لضمان ثبات الجودة والاستمرارية.",
+    title: "whyus.item2.title",
+    text: "whyus.item2.text",
   },
   {
     icon: <Package className="w-10 h-10 text-[#d8a547]" />,
-    title: "تنوع كبير في المنتجات",
-    text: "مكسرات، فواكه مجففة، سمن، بهارات، بليلة وبذور… كلها بجودة ممتازة وتناسب جميع الاستخدامات.",
+    title: "whyus.item3.title",
+    text: "whyus.item3.text",
   },
   {
     icon: <Truck className="w-10 h-10 text-[#d8a547]" />,
-    title: "توريد سريع وتوفير دائم",
-    text: "نضمن وصول المنتجات بشكل منتظم دون انقطاع عبر شبكات لوجستية فعالة.",
+    title: "whyus.item4.title",
+    text: "whyus.item4.text",
   },
   {
     icon: <Utensils className="w-10 h-10 text-[#d8a547]" />,
-    title: "حلول خاصة للمطاعم والمخابز",
-    text: "نوفر أسعار خاصة وكميات كبيرة للقطاعات المهنية مع متابعة مستمرة.",
+    title: "whyus.item5.title",
+    text: "whyus.item5.text",
   },
   {
     icon: <CheckCircle className="w-10 h-10 text-[#d8a547]" />,
-    title: "أسعار تنافسية",
-    text: "نقدّم أفضل جودة مقابل سعر مناسب يلائم السوق الليبي.",
+    title: "whyus.item6.title",
+    text: "whyus.item6.text",
   },
 ];
 
 const WhyUs = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="relative w-full py-28 bg-[#fff df5f0]">
+    <section className="relative w-full py-28 bg-[#fffdf5]">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <motion.h2
           className="text-4xl font-black text-[#6a4a2d] mb-4"
@@ -52,7 +55,8 @@ const WhyUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
         >
-          لماذا تختار <span className="text-[#d8a547]">شركة المائدة؟</span>
+          {t("whyus.title")}{" "}
+          <span className="text-[#d8a547]">{t("whyus.highlight")}</span>
         </motion.h2>
 
         <motion.p
@@ -61,8 +65,7 @@ const WhyUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          نوفّر لكم المواد الغذائية بجودة عالية ومن مصادر موثوقة، مع خدمات توريد
-          تلائم الأفراد والمحلات والمطاعم.
+          {t("whyus.subtitle")}
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
@@ -76,10 +79,10 @@ const WhyUs = () => {
             >
               <div className="flex justify-center mb-4">{point.icon}</div>
               <h3 className="text-2xl font-bold text-[#6a4a2d] mb-2">
-                {point.title}
+                {t(point.title)}
               </h3>
               <p className="text-[#5c4a35] text-sm leading-relaxed">
-                {point.text}
+                {t(point.text)}
               </p>
             </motion.div>
           ))}

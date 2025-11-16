@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Our Products",
+    "whyus": "Why Us",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "title": "Al-Ma'edah Company",
+    "subtitle": "For Food Import",
+    "cta": "Discover More"
+  },
+
+  "about": {
+    "item1": {
+      "title": "The Journey Begins in the Fields",
+      "text": "We select the finest nuts, pistachios, and peanuts from trusted global farms to offer you pure quality from the very beginning."
+    },
+    "item2": {
+      "title": "Dried Fruits… with the Taste of Life",
+      "text": "We carefully select apricot sheets and dried figs to deliver authentic taste and high quality."
+    },
+    "item3": {
+      "title": "Authentic Arabian Flavors",
+      "text": "From dried mint to cumin, chili, and spices… we bring you flavors that add a traditional touch to your kitchen."
+    },
+    "item4": {
+      "title": "Balilah… Warmth That Brings Family Together",
+      "text": "Premium-quality balilah chosen to be a comforting part of your winter moments and gatherings."
+    },
+    "item5": {
+      "title": "Sunflower Seeds & Wellness",
+      "text": "We import high-quality sunflower seeds to offer a healthy and nutritious snack for you and your family."
+    },
+    "item6": {
+      "title": "Arabian Ghee… The Taste of Home",
+      "text": "Original Arabian ghee imported with premium quality to bring an authentic homemade flavor to every dish."
+    },
+    "item7": {
+      "title": "Food Solutions for Restaurants & Bakeries",
+      "text": "We supply nuts, spices, ghee, and seeds in bulk quantities to meet the needs of restaurants and bakeries."
+    },
+    "item8": {
+      "title": "Quality Inspected with Care",
+      "text": "Every Al-Ma'edah product goes through precise quality checks to ensure great taste, cleanliness, and consistency."
+    },
+    "item9": {
+      "title": "A Global Import Network",
+      "text": "We collaborate with major suppliers worldwide to ensure consistent supply and steady quality."
+    },
+    "item10": {
+      "title": "Al-Ma'edah Vision",
+      "text": "To be Libya’s number one partner for high-quality and reliable food import."
+    }
+  },
+
+  "products": {
+    "title": "Our Products",
+    "subtitle": "A wide selection of the finest spices and food products, carefully chosen for exceptional quality.",
+
+    "item1": {
+      "title": "Crushed Red Pepper",
+      "description": "Strong flavor and authentic taste that adds the perfect heat to your favorite dishes."
+    },
+
+    "item2": {
+      "title": "Nuts",
+      "description": "A fine selection of fresh, healthy nuts — perfect as a light snack."
+    },
+
+    "item3": {
+      "title": "Mixed Spices",
+      "description": "A balanced blend of spices that gives your dishes an extraordinary taste."
+    },
+
+    "item4": {
+      "title": "Cow Ghee",
+      "description": "100% natural ghee that enriches your food with authentic richness and flavor."
+    }
+  },
+
+  "whyus": {
+    "title": "Why Choose",
+    "highlight": "Al-Ma'edah?",
+    "subtitle": "We provide high-quality food products from trusted sources, with supply services tailored for individuals, shops, and restaurants.",
+
+    "item1": {
+      "title": "Quality Tested with Care",
+      "text": "We apply strict quality standards before products reach you, ensuring taste, cleanliness, and nutritional value."
+    },
+    "item2": {
+      "title": "Trusted Global Suppliers",
+      "text": "We work with top suppliers from Turkey, Syria, Egypt, and Jordan to ensure consistent quality and supply."
+    },
+    "item3": {
+      "title": "Wide Product Variety",
+      "text": "Nuts, dried fruits, ghee, spices, balilah, and seeds — all with exceptional quality for every need."
+    },
+    "item4": {
+      "title": "Fast Supply & Continuous Availability",
+      "text": "We ensure regular and uninterrupted delivery through efficient logistics networks."
+    },
+    "item5": {
+      "title": "Special Solutions for Restaurants & Bakeries",
+      "text": "We provide special pricing and bulk quantities for professional sectors with ongoing support."
+    },
+    "item6": {
+      "title": "Competitive Prices",
+      "text": "We offer the best quality at a price that suits the Libyan market."
+    }
+  },
+
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are happy to assist you with orders or inquiries. The Al-Ma'edah team is always ready to help.",
+    "location": "Zliten - Libya",
+
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+
+    "success": "✔ Your message has been sent successfully",
+    "errorSend": "An error occurred while sending. Please try again.",
+    "errorServer": "Unable to connect to the server."
+  },
+
+  "footer": {
+    "brand": {
+      "alt": "Al-Ma'edah Company",
+      "description": "Al-Ma'edah — Importing high-quality food products selected from trusted global sources."
+    },
+
+    "links": {
+      "title": "Quick Links",
+      "home": "Home",
+      "about": "About Us",
+      "whyus": "Why Us",
+      "contact": "Contact"
+    },
+
+    "contact": {
+      "title": "Contact Information",
+      "location": "Zliten - Libya"
+    },
+
+    "whatsapp": {
+      "title": "Quick Contact",
+      "button": "WhatsApp Now"
+    },
+
+    "copy": "Al-Ma'edah Company for Food Import — All rights reserved."
+  }
+}
