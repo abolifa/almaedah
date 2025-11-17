@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -65,9 +66,9 @@ const Contact = () => {
               <Mail className="text-[#d8a547]" size={22} />
               <a
                 className="text-[#5c4a35] font-medium underline"
-                href="mailto:info@almaedah.com.ly"
+                href="mailto:info@almaidaarraqia.com"
               >
-                info@almaedah.com.ly
+                info@almaidaarraqia.com
               </a>
             </div>
 
@@ -83,11 +84,11 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center gap-3">
-              <Phone className="text-[#d8a547]" size={22} />
+              <FaWhatsapp className="text-[#d8a547]" size={22} />
               <a
                 dir="ltr"
                 className="text-[#5c4a35] font-medium underline"
-                href="tel:+218926136522"
+                href="https://wa.me/218926136522"
               >
                 +218 92 613 6522
               </a>

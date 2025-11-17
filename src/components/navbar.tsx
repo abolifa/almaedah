@@ -61,7 +61,6 @@ const Navbar = () => {
             alt="Logo"
           />
         </Link>
-
         <nav className="hidden md:flex items-center gap-8">
           {navs.map((n) => (
             <a
@@ -78,10 +77,9 @@ const Navbar = () => {
             </a>
           ))}
         </nav>
-
         <div className="flex items-center gap-4">
           <a
-            href="https://wa.me/218918814371"
+            href="https://wa.me/218926136522"
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center justify-center w-9 h-9 rounded-full border transition ${
@@ -93,7 +91,7 @@ const Navbar = () => {
             <FaWhatsapp className="w-4 h-4" />
           </a>
           <a
-            href="mailto:info@zadalkheir.com.ly"
+            href="mailto:info@almaidaarraqia.com"
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center justify-center w-9 h-9 rounded-full border transition ${
@@ -104,9 +102,7 @@ const Navbar = () => {
           >
             <Mail className="w-4 h-4" />
           </a>
-
           <LanguageToggle scrolled={scrolled} />
-
           <button
             onClick={() => setOpen((v) => !v)}
             className={`md:hidden p-2 rounded-md transition ${

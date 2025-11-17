@@ -8,7 +8,7 @@
   },
 
   "hero": {
-    "title": "Al-Ma'edah Company",
+    "title": "Al-Ma'ida Company",
     "subtitle": "For Food Import",
     "cta": "Discover More"
   },
@@ -44,14 +44,14 @@
     },
     "item8": {
       "title": "Quality Inspected with Care",
-      "text": "Every Al-Ma'edah product goes through precise quality checks to ensure great taste, cleanliness, and consistency."
+      "text": "Every Al-Ma'ida product goes through precise quality checks to ensure great taste, cleanliness, and consistency."
     },
     "item9": {
       "title": "A Global Import Network",
       "text": "We collaborate with major suppliers worldwide to ensure consistent supply and steady quality."
     },
     "item10": {
-      "title": "Al-Ma'edah Vision",
+      "title": "Al-Ma'ida Vision",
       "text": "To be Libya’s number one partner for high-quality and reliable food import."
     }
   },
@@ -83,7 +83,7 @@
 
   "whyus": {
     "title": "Why Choose",
-    "highlight": "Al-Ma'edah?",
+    "highlight": "Al-Ma'ida?",
     "subtitle": "We provide high-quality food products from trusted sources, with supply services tailored for individuals, shops, and restaurants.",
 
     "item1": {
@@ -114,7 +114,7 @@
 
   "contact": {
     "title": "Contact Us",
-    "subtitle": "We are happy to assist you with orders or inquiries. The Al-Ma'edah team is always ready to help.",
+    "subtitle": "We are happy to assist you with orders or inquiries. The Al-Ma'ida team is always ready to help.",
     "location": "Zliten - Libya",
 
     "form": {
@@ -133,8 +133,8 @@
 
   "footer": {
     "brand": {
-      "alt": "Al-Ma'edah Company",
-      "description": "Al-Ma'edah — Importing high-quality food products selected from trusted global sources."
+      "alt": "Al-Ma'ida Company",
+      "description": "Al-Ma'ida — Importing high-quality food products selected from trusted global sources."
     },
 
     "links": {
@@ -155,6 +155,6 @@
       "button": "WhatsApp Now"
     },
 
-    "copy": "Al-Ma'edah Company for Food Import — All rights reserved."
+    "copy": "Al-Ma'ida Company for Food Import — All rights reserved."
   }
 }

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -79,10 +80,10 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <Mail className="text-[#d8a547]" size={20} />
             <a
-              href="mailto:info@almaedah.com.ly"
+              href="mailto:info@almaidaarraqia.com"
               className="text-[#5c4a35] hover:text-[#d8a547] transition underline"
             >
-              info@almaedah.com.ly
+              info@almaidaarraqia.com
             </a>
           </div>
 
@@ -98,9 +99,9 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <Phone className="text-[#d8a547]" size={20} />
+            <FaWhatsapp className="text-[#d8a547]" size={20} />
             <a
-              href="tel:+218926136522"
+              href="https://wa.me/218926136522"
               dir="ltr"
               className="text-[#5c4a35] hover:text-[#d8a547] transition underline"
             >
@@ -128,7 +129,7 @@ const Footer = () => {
           </h3>
 
           <a
-            href="https://wa.me/218912090026"
+            href="https://wa.me/218926136522"
             target="_blank"
             className="w-full py-4 rounded-2xl bg-[#25D366] text-white font-bold text-center shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_40px_rgba(37,211,102,0.6)] transition"
           >
